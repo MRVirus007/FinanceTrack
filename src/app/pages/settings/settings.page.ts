@@ -1,0 +1,27 @@
+import { Component, OnInit } from "@angular/core";
+import { CashService } from "src/app/services/cash.service";
+import { Storage } from "@ionic/storage";
+
+@Component({
+  selector: "app-settings",
+  templateUrl: "./settings.page.html",
+  styleUrls: ["./settings.page.scss"],
+})
+export class SettingsPage implements OnInit {
+  currency = "";
+  constructor(private cashService: CashService, private storage: Storage) {}
+
+  ngOnInit() {
+    this.storage.get("selected-currency").then((val) => {
+      this.currency = val;
+    });
+  }
+
+  updateCurrency() {
+    this.cashService.updateCurrency(this.currency);
+  }
+
+  clearData() {
+    this.cashService.clearData();
+  }
+}

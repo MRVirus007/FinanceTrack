@@ -1,0 +1,15 @@
+ion-content {
+  --background: transparent;
+}
+
+ion-card {
+  margin-top: 10vh;
+}
+
+.redgrad {
+  --background: linear-gradient(to right, #e43a15, #e65245) !important;
+}
+
+.gogreen {
+  --background: linear-gradient(to right, #348f50, #56b4d3) !important;
+}
